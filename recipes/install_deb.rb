@@ -25,7 +25,7 @@ apt_repository 'clamav-repo' do
   uri 'http://ppa.launchpad.net/ubuntu-clamav/ppa/ubuntu'
   distribution node['lsb']['codename']
   components ['main']
-  keyserver 'keyserver.ubuntu.com'
+  keyserver 'hkt://keyserver.ubuntu.com:80'
   key '5ADC2037'
   only_if { node['platform'] == 'ubuntu' }
   notifies :run, 'execute[apt-get update]', :immediately
